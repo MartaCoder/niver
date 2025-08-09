@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Aniversário Veroneide</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #6a0dad, #8e44ad, #9b59b6);
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-top: 30px;
+      }
+      .mensagem {
+        background: rgba(255, 255, 255, 0.12);
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 700px;
+        margin: 30px auto;
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+      .coração {
+        font-size: 3rem;
+        animation: pulsar 1.5s infinite;
+      }
+      @keyframes pulsar {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .carrossel {
+        max-width: 500px;
+        margin: 20px auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+      }
+      .carrossel img {
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .carrossel img.ativo {
+        opacity: 1;
+        position: relative;
+      }
+      footer {
+        margin-top: 40px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Música de fundo -->
+    <audio autoplay loop>
+      <source
+        src="terra-seca-ep-terra-seca-fraternidade-sao-joao-paulo-ii_CMxy4xyp.mp3"
+        type="audio/mpeg"
+      />
+      Seu navegador não suporta áudio.
+    </audio>
+
+    <h1>🎉Feliz Aniversário!🎉</h1>
+
+    <!-- Carrossel de fotos -->
+    <div class="carrossel">
+      <img src="img01.jpeg" class="ativo" alt="Foto 1 da Veroneide" />
+      <img src="img02.jpeg" alt="Foto 2 da Veroneide" />
+      <img src="img03.jpeg" alt="Foto 3 da Veroneide" />
+    </div>
+
+    <div class="mensagem">
+      <p>Meu amor ❤️</p>
+      <p>
+        Hoje é o seu dia e eu quero te lembrar o quanto você é especial para
+        mim. Feliz aniversário, meu bem! Que cada sonho seu se torne realidade e
+        que Deus ilumine todos os seus caminhos.
+      </p>
+      <p>
+        Eu sei que este aniversário não foi exatamente como você queria, mas
+        acredite: Deus está vendo tudo e preparando coisas lindas para a sua
+        vida. E mesmo que a distância nos separe, meu coração está sempre com
+        você.
+      </p>
+      <p>
+        Saiba que torço por cada passo seu, que vibro com cada conquista e que o
+        meu amor por você só cresce a cada dia.
+      </p>
+      <p>Eu te amo hoje, amanhã e para sempre. 💖</p>
+    </div>
+
+    <div class="coração">💗</div>
+
+    <footer>Com todo o meu carinho. <br />Ass:Júlio ❤️</footer>
+
+    <script>
+      let indice = 0;
+      const imagens = document.querySelectorAll(".carrossel img");
+
+      function trocarFoto() {
+        imagens[indice].classList.remove("ativo");
+        indice = (indice + 1) % imagens.length;
+        imagens[indice].classList.add("ativo");
+      }
+
+      setInterval(trocarFoto, 3000); // troca a cada 3 segundos
+    </script>
+  </body>
+</html>
